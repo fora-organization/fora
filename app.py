@@ -10,6 +10,10 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/user')
+def user_details():
+    return render_template('user_details.html')
+
 
 if __name__ == "__main__":
     create_db()
