@@ -19,3 +19,4 @@ class Product(Base):
 
     cart_users: Mapped[List["User"]] = relationship(secondary=user_cart_assoc_table, back_populates="cart")
     fav_users: Mapped[List["User"]] = relationship(secondary=user_favorites_assoc_table, back_populates="favorites")
+    review: Mapped[List['Review']] = relationship(back_populates='product')
