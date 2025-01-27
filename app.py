@@ -4,17 +4,9 @@ from models import *
 
 app = Flask(__name__)
 
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-
-@app.route('/user')
-def user_details():
-    return render_template('user_details.html')
-
+from routes import *
 
 if __name__ == "__main__":
+    drop_db()
     create_db()
     app.run(debug=True)
