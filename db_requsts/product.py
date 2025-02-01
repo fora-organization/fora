@@ -1,6 +1,11 @@
 from models import Product, Session
 
 
+def get_all_products():
+    with Session() as session:
+        return session.query(Product).all()
+
+
 def create_product(name: str, description: str, price: float, quantity: int, image_url: str, rating: float) -> Product:
     with Session() as session:
         product = Product(
