@@ -1,27 +1,189 @@
-<footer style="background-color: rgb(11, 40, 11); color: white;">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 mb-3">
-                <h5>About us</h5>
-                <p> Welcome to our online shop! We offer ...</p>
-            </div>
-            <div class="col-4 mb-3">
-                <h5>Quick Links</h5>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Page1</a></li>
-                    <li><a href="#">Page2</a></li>
-                </ul>
-            </div>
-            <div class="col-4 mb-3">
-                <h5>Contact Us</h5>
-                <p> +123 456 789, City, Street</p>
-                <p> @telegram</p>
-                <p> @instagram</p>
-            </div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fora Shop</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        header {
+            background-color: #0b280b;
+            padding: 20px 0;
+            text-align: center;
+            color: #00ff00;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .search-container input {
+            padding: 10px;
+            border: 1px solid #00ff00;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #00ff00;
+            background-color: #0b280b;
+        }
+
+        .search-container button {
+            padding: 10px 15px;
+            border: 1px solid #00ff00;
+            border-radius: 0 5px 5px 0;
+            background-color: #00ff00;
+            color: #000000;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-container button:hover {
+            background-color: #ff0000;
+        }
+
+        footer {
+            background-color: #0b280b;
+            padding: 40px 0;
+            text-align: center;
+            color: #00ff00;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 20px;
+            min-width: 250px;
+        }
+
+        .footer-section h5 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 10px 0;
+        }
+
+        .footer-section ul li a, .footer-section p a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul li a:hover, .footer-section p a:hover {
+            color: #ff0000;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            border-top: 1px solid #00ff00;
+            padding-top: 20px;
+            font-size: 1rem;
+        }
+
+        /* Стилі для Contact Us */
+        .contact-us {
+            background-color: #0b280b;
+            color: #00ff00;
+            padding: 30px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .contact-us p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>Fora</h1>
         </div>
-        <div class="text-center">
-            <p>&copy; 2025 Fora. All rights reserved</p>
+        <nav>
+            <ul style="display: flex; list-style: none; padding: 0; margin: 0; color: #00ff00;">
+                <li><a href="#" style="text-decoration: none; padding: 0 20px; color: #00ff00;">Home</a></li>
+                <li><a href="#" style="text-decoration: none; padding: 0 20px; color: #00ff00;">Link 1</a></li>
+                <li><a href="#" style="text-decoration: none; padding: 0 20px; color: #00ff00;">Link 2</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button type="button">Search</button>
         </div>
     </div>
+</header>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h5>About us</h5>
+            <p>Welcome to our online shop! We offer...</p>
+        </div>
+        <div class="footer-section">
+            <h5>Quick Links</h5>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="contact-us">
+        <h5>Contact Us</h5>
+        <p>+123 456 789</p>
+        <p>City, Street</p>
+        <p><a href="#" style="color: #00ff00;">@telegram</a></p>
+        <p><a href="#" style="color: #00ff00;">@instagram</a></p>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fora. All rights reserved.</p>
+    </div>
 </footer>
+
+</body>
+</html>
