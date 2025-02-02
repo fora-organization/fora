@@ -6,8 +6,6 @@ from .product import Product
 from .associates import user_cart_assoc_table
 from .product import user_favorites_assoc_table
 
-create_db()
-
 """
     1. Користувач
     2. Роль Адмін/покупець/продукт
