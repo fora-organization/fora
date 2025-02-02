@@ -1,12 +1,11 @@
-from flask import Blueprint, request, render_template, redirect, url_for, flash
+from flask import request, render_template, redirect, url_for, flash
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash
 from models import Session, User
 
-register_routes = Blueprint('register_routes', __name__)
+from app import app
 
-
-@register_routes.route('/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
         email = request.form['email']
@@ -20,7 +19,7 @@ def register():
             session.add(new_user)
             session.commit()
             flash('Реєстрація успішна! Ви можете увійти.', 'success')
-            return redirect(url_for('login_routes.login'))
+            return redirect(url_for('login'))
         except IntegrityError:
             session.rollback()
             flash('Користувач з таким email вже існує.', 'error')
