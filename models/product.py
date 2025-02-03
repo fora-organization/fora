@@ -20,3 +20,10 @@ class Product(Base):
     cart_users: Mapped[List["User"]] = relationship(secondary=user_cart_assoc_table, back_populates="cart")
     fav_users: Mapped[List["User"]] = relationship(secondary=user_favorites_assoc_table, back_populates="favorites")
     review: Mapped[List['Review']] = relationship(back_populates='product')
+
+    def __repr__(self):
+        return (
+            f"id:{self.id}, name:'{self.name}', description:'{self.description}', "
+            f"price:{self.price}, quantity:{self.quantity}, image_url:'{self.image_url}', "
+            f"rating:{self.rating}"
+        )

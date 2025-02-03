@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends "index.html" %}
+
+{% block main %}
 <body>
-    {{products}}
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-3">
+                    <div class="product-card">
+                        <a href='/product/{{product.id}}' class="card-url">
+                            <img src="{{product.image_url}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">{{product.description}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% if loop.index % 3 == 0 %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 </body>
-</html>
+{% endblock main %}
