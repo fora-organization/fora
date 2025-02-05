@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    {{users}}
+    {% for ueser in users %}
+        <p><a href='/user/{{ueser.id}}'>{{ueser.first_name}}</a></p>
+    {% endfor %}
 </body>
 </html>

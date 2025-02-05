@@ -21,3 +21,6 @@ class User(Base):
     role: Mapped[Optional["Role"]] = relationship(back_populates="users")
     cart: Mapped[List[Product]] = relationship(secondary=user_cart_assoc_table, back_populates="cart_users")
     favorites: Mapped[List[Product]] = relationship(secondary=user_favorites_assoc_table, back_populates="fav_users")
+
+    def __repr__(self):
+        return f'<User(id={self.id}, email={self.email}, first_name={self.first_name}, last_name={self.last_name}, phone_number={self.phone_number}, zip_code={self.zip_code}, role_id={self.role_id})>'

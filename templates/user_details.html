@@ -1,57 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Card</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #0b280b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #00ff00;
-        }
-        .card {
-            width: 22rem;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
-            transition: transform 0.3s;
-            background-color: #0f3d0f;
-            border: 1px solid #00ff00;
-        }
-        .card-header {
-            background: #062b06;
-            color: #00ff00;
-            text-align: center;
-            font-size: 1.3rem;
-            padding: 15px;
-        }
-        .list-group-item {
-            background-color: #0f3d0f;
-            border-color: #00ff00;
-            color: #00ff00;
-        }
-        .list-group-item strong {
-            color: #55ff55;
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <div class="card-header">User Profile</div>
-        <div class="card-body">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Name: <strong>Ivan</strong></li>
-                <li class="list-group-item">Surname: <strong>Pip</strong></li>
-                <li class="list-group-item">Email: <strong>m@gmail.com</strong></li>
-                <li class="list-group-item">Phone: <strong>+123 456 789</strong></li>
-                <li class="list-group-item">Zip code: <strong>794 71</strong></li>
-            </ul>
+{% extends "index.html" %}
+
+{% block main %}
+    <div class="profile-container">
+        <div class="card">
+            <div class="card-header">User Profile</div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Name: <strong>{{user.first_name}}</strong></li>
+                    <li class="list-group-item">Surname: <strong>{{user.last_name}}</strong></li>
+                    <li class="list-group-item">Email: <strong>{{user.email}}</strong></li>
+                    <li class="list-group-item">Phone: <strong>{{user.phone_number}}</strong></li>
+                    <li class="list-group-item">Zip code: <strong>{{user.zip_code}}</strong></li>
+                    <li class="list-group-item">Your ID: <strong>{{user.id}}</strong></li>
+                </ul>
+            </div>
         </div>
     </div>
-</body>
-</html>
+
+{% endblock main %}
