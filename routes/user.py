@@ -22,3 +22,4 @@ def user_details(id):
         return render_template('user_details.html', user=user)
     else:
         return redirect(url_for('show_all_users'))
+    

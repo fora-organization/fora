@@ -19,7 +19,7 @@ def login():
             session["user_name"] = user.first_name
 
             flash('Успішний вхід!', 'success')
-            return redirect(url_for('products_route'))
+            return redirect(url_for('default'))
         else:
             flash('Невірний email або пароль.', 'error')
 
